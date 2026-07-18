@@ -40,6 +40,12 @@ class RenderedLogsPlugin implements HasPluginSettings, Plugin
 
     public function boot(Panel $panel): void {}
 
+    /** @return array<string, mixed> */
+    public function getSettingsFormData(): array
+    {
+        return config('serpensin-rendered-logs');
+    }
+
     public function getSettingsForm(): array
     {
         return [
@@ -53,8 +59,7 @@ class RenderedLogsPlugin implements HasPluginSettings, Plugin
                         ->integer()
                         ->minValue(1)
                         ->maxValue(1440)
-                        ->required()
-                        ->default(fn () => config('serpensin-rendered-logs.link_ttl_minutes', 60)),
+                        ->required(),
                     TextInput::make('max_log_bytes')
                         ->label(trans('serpensin-rendered-logs::strings.settings.max_log_bytes'))
                         ->helperText(trans('serpensin-rendered-logs::strings.settings.max_log_bytes_help'))
@@ -62,8 +67,7 @@ class RenderedLogsPlugin implements HasPluginSettings, Plugin
                         ->integer()
                         ->minValue(10_000)
                         ->maxValue(5_000_000)
-                        ->required()
-                        ->default(fn () => config('serpensin-rendered-logs.max_log_bytes', 500_000)),
+                        ->required(),
                 ]),
         ];
     }

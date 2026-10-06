@@ -30,20 +30,15 @@ def load_release_tag() -> str:
     if not isinstance(version, str):
         raise SystemExit('ERROR: plugin.json must declare a string version.')
 
-    releases = update_data.get('releases')
     active = update_data.get('*')
-    if not isinstance(releases, dict) or not isinstance(active, dict):
-        raise SystemExit('ERROR: update.json must contain releases and * objects.')
+    if not isinstance(active, dict):
+        raise SystemExit('ERROR: update.json must contain a * object.')
 
-    release = releases.get(version)
-    if not isinstance(release, dict):
-        raise SystemExit(f'ERROR: update.json.releases is missing version {version}.')
+    if active.get('version') != version:
+        raise SystemExit(f'ERROR: plugin.json and update.json.* must both declare {version}.')
 
-    if release.get('version') != version or active.get('version') != version:
-        raise SystemExit(f'ERROR: plugin.json, update.json.releases and update.json.* must all declare {version}.')
-
-    if release.get('download_url') != active.get('download_url'):
-        raise SystemExit('ERROR: update.json.releases and update.json.* must use the same current download_url.')
+    if not isinstance(active.get('download_url'), str) or not active['download_url']:
+        raise SystemExit('ERROR: update.json.* must contain a non-empty download_url.')
 
     return version_tag(version)
 

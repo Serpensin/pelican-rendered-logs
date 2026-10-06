@@ -1,10 +1,4 @@
 {
-  "releases": {
-    "1.0.0": {
-      "version": "1.0.0",
-      "download_url": "https://gitlab.com/Serpensin/pelican-rendered-logs/-/archive/v1.0.0/pelican-rendered-logs-v1.0.0.zip"
-    }
-  },
   "*": {
     "version": "1.0.0",
     "download_url": "https://gitlab.com/Serpensin/pelican-rendered-logs/-/archive/v1.0.0/pelican-rendered-logs-v1.0.0.zip"

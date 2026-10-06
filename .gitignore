@@ -5,5 +5,4 @@
 # Runtime/editor artifacts
 /vendor/
 /node_modules/
-release.env
 .DS_Store

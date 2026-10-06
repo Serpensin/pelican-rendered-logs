@@ -1,6 +1,20 @@
 {
+  "releases": {
+    "1.0.0": {
+      "version": "1.0.0",
+      "download_url": "https://gitlab.com/Serpensin/pelican-rendered-logs/-/archive/v1.0.0/pelican-rendered-logs-v1.0.0.zip"
+    },
+    "1.0.1": {
+      "version": "1.0.1",
+      "download_url": "https://gitlab.com/Serpensin/pelican-rendered-logs/-/archive/v1.0.1/pelican-rendered-logs-v1.0.1.zip"
+    },
+    "1.0.2": {
+      "version": "1.0.2",
+      "download_url": "https://gitlab.com/Serpensin/pelican-rendered-logs/-/archive/v1.0.2/pelican-rendered-logs-v1.0.2.zip"
+    }
+  },
   "*": {
-    "version": "1.0.1",
-    "download_url": "https://gitlab.com/api/v4/projects/Serpensin%2Fpelican-rendered-logs/packages/generic/serpensin-rendered-logs/1.0.1/serpensin-rendered-logs.zip"
+    "version": "1.0.2",
+    "download_url": "https://gitlab.com/Serpensin/pelican-rendered-logs/-/archive/v1.0.2/pelican-rendered-logs-v1.0.2.zip"
   }
 }

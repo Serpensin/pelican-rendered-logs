@@ -48,20 +48,3 @@ Unknown terminal escape sequences are consumed rather than rendered as boxes. Th
    ```
 
 5. Open a server's **Console**, click **Download Logs**, then copy the notification URL to the intended recipient. Opening the URL starts the download directly; refreshing it returns 404.
-
-## Development checks
-
-```bash
-find . -type f -name '*.php' -print0 | xargs -0 -n1 php -l
-php tests/TerminalHtmlDocumentTest.php
-python3 -m json.tool plugin.json >/dev/null
-```
-
-## Compatibility
-
-Uses Pelican's public Console extension hook and the same Wings endpoint as the upstream `mclogs-uploader` pattern:
-
-```php
-Console::registerCustomHeaderActions(HeaderActionPosition::Before, CreateRenderedLogAction::make());
-Http::daemon($server->node)->get("/api/servers/{$server->uuid}/logs");
-```

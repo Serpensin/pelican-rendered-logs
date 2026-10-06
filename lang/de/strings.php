@@ -24,6 +24,6 @@ return [
     ],
     'command' => [
         'description' => 'Abgelaufene oder verwaiste gerenderte Log-Downloads entfernen.',
-        'purged' => ':count abgelaufene(r) Rendered-Log-Link(s) entfernt.',
+        'purged' => ':count abgelaufene Rendered-Log-Downloads entfernt.',
     ],
 ];

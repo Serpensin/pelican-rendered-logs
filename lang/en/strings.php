@@ -24,6 +24,6 @@ return [
     ],
     'command' => [
         'description' => 'Remove expired or orphaned rendered log downloads.',
-        'purged' => 'Removed :count expired rendered log link(s).',
+        'purged' => 'Removed :count expired rendered-log downloads.',
     ],
 ];

@@ -35,4 +35,4 @@ if (str_contains($cleared, 'secret')) {
     throw new RuntimeException('Erase-screen control leaked cleared text.');
 }
 
-fwrite(STDOUT, "renderer assertions passed\n");
+print "renderer assertions passed\n";

@@ -3,6 +3,7 @@
     "name": "Rendered Logs",
     "author": "Serpensin",
     "version": "1.0.0",
+    "api_version": 1,
     "description": "Create a one-time download link for an internally rendered terminal log.",
     "category": "plugin",
     "url": "https://gitlab.com/Serpensin/pelican-rendered-logs",

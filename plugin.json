@@ -2,7 +2,7 @@
     "id": "serpensin-rendered-logs",
     "name": "Rendered Logs",
     "author": "Serpensin",
-    "version": "1.0.2",
+    "version": "1.0.0",
     "api_version": 1,
     "description": "Create a one-time download link for an internally rendered terminal log.",
     "category": "plugin",
@@ -11,5 +11,5 @@
     "namespace": "Serpensin\\RenderedLogs",
     "class": "RenderedLogsPlugin",
     "panels": ["server"],
-    "panel_version": ">=1.0.0-rc.1"
+    "panel_version": null
 }

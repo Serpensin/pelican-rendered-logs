@@ -1,0 +1,7 @@
+# CI, development metadata, and tests are not required at runtime.
+.gitlab-ci.yml export-ignore
+.gitignore     export-ignore
+AGENTS.md      export-ignore
+DEVNOTES.md    export-ignore
+scripts        export-ignore
+tests          export-ignore

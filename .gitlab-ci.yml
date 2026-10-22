@@ -12,6 +12,7 @@ php-syntax:
   script:
     - find src tests -name '*.php' -print0 | xargs -0 -n1 php -l
     - php tests/TerminalHtmlDocumentTest.php
+    - php tests/WingsWebsocketProtocolTest.php
     - php -r "json_decode(file_get_contents('plugin.json'), true, 512, JSON_THROW_ON_ERROR); json_decode(file_get_contents('update.json'), true, 512, JSON_THROW_ON_ERROR);"
 
 create-release-tag:

@@ -62,4 +62,18 @@ wsThrows(
     'RSV WebSocket extension bit was accepted.',
 );
 
+$fetcherSource = file_get_contents(dirname(__DIR__) . '/src/Services/WingsWebsocketLogFetcher.php');
+$forbiddenWrite = 'f' . 'write' . '(';
+wsAssert(!str_contains($fetcherSource, $forbiddenWrite), 'Hub-blocked write function remains in the WebSocket client.');
+
+$pair = stream_socket_pair(STREAM_PF_UNIX, STREAM_SOCK_STREAM, STREAM_IPPROTO_IP);
+wsAssert($pair !== false, 'Could not create a local stream socket pair.');
+$fetcher = (new ReflectionClass(WingsWebsocketLogFetcher::class))->newInstanceWithoutConstructor();
+$writeAll = new ReflectionMethod(WingsWebsocketLogFetcher::class, 'writeAll');
+$writeAll->invoke($fetcher, $pair[0], 'masked client frame');
+stream_set_timeout($pair[1], 1);
+wsAssert(stream_get_contents($pair[1]) === 'masked client frame', 'Native stream write did not deliver the complete payload.');
+fclose($pair[0]);
+fclose($pair[1]);
+
 print "websocket protocol assertions passed\n";

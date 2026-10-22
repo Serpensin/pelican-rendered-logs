@@ -277,7 +277,7 @@ class WingsWebsocketLogFetcher
     {
         $written = 0;
         while ($written < strlen($data)) {
-            $count = fwrite($socket, substr($data, $written));
+            $count = stream_socket_sendto($socket, substr($data, $written));
             if ($count === false || $count === 0) {
                 throw new RuntimeException('Could not write to the Wings WebSocket connection.');
             }
